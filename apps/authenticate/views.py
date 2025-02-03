@@ -4,6 +4,14 @@ from rest_framework.response import Response
 from .models import UserProfile
 from rest_framework.permissions import IsAuthenticated
 from .serializers import RegisterSerializer
+from django.http.response import JsonResponse
+from rest_framework.decorators import api_view
+
+@api_view(['GET'])
+def endpoint(request):
+  data = ['/register','/login','/tasks']
+  return Response(data)
+
 
 class RegisterView(CreateAPIView):
     queryset = UserProfile.objects.all()
