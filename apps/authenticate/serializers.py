@@ -10,12 +10,16 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = UserProfile
-        fields = ['username', 'email', 'password', 'role']
+        fields = ['id','username', 'email', 'password', 'role']
 
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
         fields = [ 'username']
+
+
+
+
 
     
 

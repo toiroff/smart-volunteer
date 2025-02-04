@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'apps.authenticate',
+    'apps.authenticate.apps.AuthenticateConfig',
     'apps.task',
 
     'rest_framework',
@@ -61,6 +61,10 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
+
+ 
+
+
 
 CORS_ALLOW_ALL_ORIGINS = True
 AUTH_USER_MODEL = 'authenticate.UserProfile'

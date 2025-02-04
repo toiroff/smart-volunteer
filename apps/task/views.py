@@ -1,12 +1,12 @@
-from django.shortcuts import render
 from rest_framework.generics import ListCreateAPIView,RetrieveUpdateDestroyAPIView
-from rest_framework.response import Response
-from rest_framework import status
+from django.views.decorators.cache import cache_page
+from django.utils.decorators import method_decorator
 
 from .serializers import TaskSerializer
 from .models import Task
-# Create your views here.
 
+
+method_decorator(cache_page(60 * 15), name="dispatch")
 class TaskView(ListCreateAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
